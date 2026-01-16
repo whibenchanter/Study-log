@@ -1,4 +1,4 @@
-### blocking.py ### 
+### 1-16.blocking.py ### 
 #    (개념설명용)
 # FASTAPI는 왜 빠를까?
 
@@ -34,7 +34,7 @@ asyncio.run(main())
 
 
 
-### model.py ###
+### 1-16.model.py ###
 # 모델링(설계도)
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -98,6 +98,11 @@ async def get_async_session(): # 투입할 애들 만들기
 ### 1-16.crud_async.py ### 
 #          (실행부)
 
+# 필요 패키지 설치
+# aiosqlite: SQLite용 비동기 드라이버
+# greenlet: SQLAlchemy 비동기 기능을 위한 필수 의존성
+# pip install aiosqlite
+# pip install greenlet
 from fastapi import FastAPI, HTTPException, status, Depends
 from pydantic import BaseModel
 from sqlalchemy import select
