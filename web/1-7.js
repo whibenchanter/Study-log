@@ -54,7 +54,7 @@ console.log(user.email);
 
 // #불합격도 표시되고, undefined도 표시됨. 리턴이 디폴트 리턴(실행할게 없을때)까지 가서.
 function checkPass(score) {
-    if (score >=60)  {
+    if (score >= 60) {
         console.log("합격");
     } else {
         console.log("불합격");
