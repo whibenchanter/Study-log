@@ -1,17 +1,17 @@
 <!-- dom.html -->
 <!-- 기본html 요소 구조 id와 class를 사용하여 dom 요소를 선택할 수 있다. -->
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>  <!-- HTML5 문서 선언 -->
+<html lang="en">  <!-- 영어 문서 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<head>  <!-- 메타 정보 영역 -->
+    <meta charset="UTF-8">  <!-- 문자 인코딩 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- 반응형 설정 -->
+    <title>Document</title>  <!-- 탭 제목 -->
 </head>
 
-<body>
-    <div id="box" style="background-color: orange;">Box</div>
-    <div class="container" style="background-color: skyblue;">Container</div>
+<body>  <!-- 본문 영역 -->
+    <div id="box" style="background-color: orange;">Box</div>  <!-- id="box" 오렌지 박스 -->
+    <div class="container" style="background-color: skyblue;">Container</div>  <!-- class="container" 하늘색 박스 -->
 </body>
 
 
@@ -163,13 +163,14 @@
     <div id="box" style="background-color: orange; width: 150px;">마우스를 올려보세요.</div>
 
     <script>
-        const box = document.querySelector("#box");
+        const box = document.querySelector("#box");  // id="box" 요소 선택
 
-        box.addEventListener("mouseover", () => changeBackgroundColor("skyblue"));  // (이벤트, 함수전달(함수실행x)) 이게 결국 앞에서 실행이 되면 리턴 언디파인드, 
-        box.addEventListener("mouseout", () => changeBackgroundColor("orange")); // 마우스아웃, () => 통해 정상적으로 함수전달 * () =function() 와 동일
+        box.addEventListener("mouseover", () => changeBackgroundColor("skyblue"));  // 마우스 올리면 하늘색
+        box.addEventListener("mouseout", () => changeBackgroundColor("orange"));  // 마우스 빼면 오렌지색
+        // () => 는 function() 과 동일한 화살표 함수
 
-        function changeBackgroundColor(color) {    // 함수 등록, 여기서 함수 실행이 아니므로 위에 ()대신 이 함수를 그대로 쓰면 리턴 언디파인드가 숨어있어서 언디파인드가 떠버림
-            box.style.backgroundColor = color;
+        function changeBackgroundColor(color) {  // 배경색 바꾸는 함수 정의
+            box.style.backgroundColor = color;  // 스타일 변경
         };
     </script>
 
@@ -181,3 +182,19 @@
 <!-- // 리턴안넣을때는, 
  디폴트리턴이 작용해서 값을 너가 넣은게 아니구나하며 언디파인드가 결과값과 같이 출력(파이썬은 에러), 
 // 리턴 직접 넣었을때는, 값을 리턴뒤에 넣게되고 리턴뒤가 출력 -->
+
+
+<!-- ============================================ -->
+<!-- 📌 코드 흐름 요약 -->
+<!-- ============================================ -->
+<!-- 1. HTML 기본 구조: <!DOCTYPE> -> <html> -> <head> + <body> -->
+<!-- 2. DOM 요소 선택: document.querySelector("선택자") -->
+<!--    - #id: id로 선택 -->
+<!--    - .class: 클래스로 선택 -->
+<!--    - 태그명: 태그로 선택 -->
+<!-- 3. 이벤트 리스너: 요소.addEventListener("이벤트", 함수) -->
+<!--    - click: 클릭시 -->
+<!--    - mouseover: 마우스 올림 -->
+<!--    - mouseout: 마우스 떠남 -->
+<!-- 4. 화살표 함수: () => {} 는 function() {} 과 같음 -->
+<!-- 5. 스타일 변경: 요소.style.속성명 = "값" -->

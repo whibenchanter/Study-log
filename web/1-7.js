@@ -1,4 +1,4 @@
-// 1.
+// 1. 반복문 - 짝수 출력
 // 1부터 10까지 중 짝수만 콘솔에 출력하세요.
 
 // 1부터란 의미에는 맞지않는 방법
@@ -6,9 +6,9 @@
 //     console.log(i);
 // }
 
-for (let i = 1; i < 11; i++) {
-    if (i % 2 === 0)
-        console.log(i);
+for (let i = 1; i < 11; i++) {  // i를 1부터 10까지 1씩 증가
+    if (i % 2 === 0)  // 2로 나눈 나머지가 0이면 짝수
+        console.log(i);  // 짝수만 출력
 }
 
 // for (let i = 1; 1 < 11; 1++) {      //무한루프
@@ -17,26 +17,26 @@ for (let i = 1; i < 11; i++) {
 //     }
 // }
 
-// 2.
-let fruits = ['apple', 'banana', 'cherry']
+// 2. 배열 순회 (for...of)
+let fruits = ['apple', 'banana', 'cherry']  // 배열 선언
 
-for (const fruit of fruits) {
-    console.log(fruit);
+for (const fruit of fruits) {  // 배열의 각 요소를 fruit에 담아서 반복
+    console.log(fruit);  // 각 과일 이름 출력
 }
 
-// 3.
-let user = {
-    name: "Alice",
-    age: 30,
-    email: "alice@example.com"
+// 3. 객체 (Object)
+let user = {  // 객체 선언 (key: value 형태)
+    name: "Alice",  // 이름
+    age: 30,  // 나이
+    email: "alice@example.com"  // 이메일
 }
 //위가 바로 객체임, 이름을 적어서 관리하는거
 
-console.log(user.name);
-console.log(user.age);
-console.log(user.email);
+console.log(user.name);  // 객체.속성명으로 접근
+console.log(user.age);  // 30 출력
+console.log(user.email);  // 이메일 출력
 
-// 4.
+// 4. 함수와 return
 // 함수 선언.    #불합격만 표시, 값이 없지만 리턴(실행할게 없어짐)에서 끝나서.
 // function checkPass(score) {
 //     if (score >=60)  {
@@ -53,16 +53,16 @@ console.log(user.email);
 
 
 // #불합격도 표시되고, undefined도 표시됨. 리턴이 디폴트 리턴(실행할게 없을때)까지 가서.
-function checkPass(score) {
-    if (score >= 60) {
-        console.log("합격");
-    } else {
-        console.log("불합격");
+function checkPass(score) {  // 점수를 받아 합격/불합격 판정
+    if (score >= 60) {  // 60점 이상이면
+        console.log("합격");  // 합격 출력
+    } else {  // 60점 미만이면
+        console.log("불합격");  // 불합격 출력
     }
-}
+}  // return이 없으면 undefined 반환됨
 
-let result = checkPass(70)
-console.log(result);
+let result = checkPass(70)  // 70점으로 함수 호출 → "합격" 출력
+console.log(result);  // undefined 출력 (return이 없어서)
 
 // 리턴에 따른 undefined값은, 파이썬에선 보지 못했던 부분이라 처음엔 생소했는데, 풀어보자면,
 
@@ -75,3 +75,15 @@ console.log(result);
 // 우리가 인자를 넣고 안넣고는 문제되지않는다.
 
 // 다만 리턴을 썼을때 리턴 뒤에 값은 넣어줘야 한다. 
+
+
+// ============================================
+// 📌 코드 흐름 요약
+// ============================================
+// 1. for문: 반복 실행 (i++ = 1씩 증가)
+// 2. for...of: 배열 요소 하나씩 꺼내서 반복
+// 3. 객체: {key: value} 형태로 데이터 묶음 관리
+// 4. 함수: function 이름(매개변수) { 실행코드 }
+// 5. return:
+//    - return 있으면 → 값 반환 후 함수 종료
+//    - return 없으면 → undefined 반환 (디폴트)
